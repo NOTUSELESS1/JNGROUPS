@@ -10,7 +10,7 @@ body,
     color: gold !important;
 }
 #cover{
-    background:url("bg.jpg");
+    background:url("service.jpg");
     background-size: cover !important;
     -webkit-background-size: cover !important;
     -moz-background-size: cover !important;
@@ -46,7 +46,7 @@ h2{
     font-weight: 700 !important;
 }
 .btn-primary:hover{
-    background-color: #000 !important;
+    background-color: gold !important;
     color: #fed136 !important;
 }
 a.nav-link{

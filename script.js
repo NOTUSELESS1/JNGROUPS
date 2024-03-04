@@ -1,26 +1,22 @@
-"use strict";
+new WOW().init();
 
-const navbar = document.querySelector(".nav-bar");
 
-const openMenu = document.querySelector(".bx-menu");
-const closeMenu = document.querySelector(".bx-x");
+$(window).scroll(function() {
+    var scroll = $(window).scrollTop();
 
-// Open menu
-
-openMenu.addEventListener("click", (e) => {
-  if (e.target.classList.contains("bx-menu")) {
-    navbar.classList.add("show-menu");
-    openMenu.classList.add("hide-icon");
-    closeMenu.classList.add("show-icon");
-  }
+    if (scroll >= 300) {
+        $(".fixed-top").addClass("change-fixed-top");
+    } else {
+        $(".fixed-top").removeClass("change-fixed-top");
+    }
 });
 
-// CLose menu
+$(document).on('click', 'a', function(event){
+    event.preventDefault();
 
-closeMenu.addEventListener("click", (e) => {
-  if (e.target.classList.contains("bx-x")) {
-    navbar.classList.remove("show-menu");
-    openMenu.classList.remove("hide-icon");
-    closeMenu.classList.remove("show-icon");
-  }
+    $('html, body').animate({
+        scrollTop: $( $.attr(this, 'href') ).offset().top
+    }, 1250);
+    $('html, body').animate({path : new $.path.bezier(bezier_params)})
+
 });
